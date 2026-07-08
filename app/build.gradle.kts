@@ -167,7 +167,8 @@ dependencies {
 
     // Networking (football-data.org API only)
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    // Official Retrofit kotlinx.serialization converter (package retrofit2.converter.kotlinx.serialization)
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     // Logging interceptor is used in DEBUG builds only.
     debugImplementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
