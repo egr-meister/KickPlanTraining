@@ -35,21 +35,25 @@ val footballApiBaseUrl: String =
 // (GitHub Secrets in CI) or local.properties for local release builds.
 // Nothing sensitive is committed to the repository.
 // ---------------------------------------------------------------------------
-val keystorePath: String? = System.getenv("ANDROID_KEYSTORE_PATH")
+// NOTE: these vals are deliberately NOT named keyAlias / keyPassword, because
+// inside the signingConfigs.create("release") { } lambda the receiver already
+// has members named keyAlias/keyPassword; an unqualified name there would
+// resolve to the receiver member (null), not these values.
+val ksPath: String? = System.getenv("ANDROID_KEYSTORE_PATH")
     ?: localProperties.getProperty("ANDROID_KEYSTORE_PATH")
-val keystorePassword: String? = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+val ksStorePassword: String? = System.getenv("ANDROID_KEYSTORE_PASSWORD")
     ?: localProperties.getProperty("ANDROID_KEYSTORE_PASSWORD")
-val keyAlias: String? = System.getenv("ANDROID_KEY_ALIAS")
+val ksKeyAlias: String? = System.getenv("ANDROID_KEY_ALIAS")
     ?: localProperties.getProperty("ANDROID_KEY_ALIAS")
-val keyPassword: String? = System.getenv("ANDROID_KEY_PASSWORD")
+val ksKeyPassword: String? = System.getenv("ANDROID_KEY_PASSWORD")
     ?: localProperties.getProperty("ANDROID_KEY_PASSWORD")
 
 val hasReleaseSigning: Boolean =
-    !keystorePath.isNullOrBlank() &&
-        file(keystorePath!!).exists() &&
-        !keystorePassword.isNullOrBlank() &&
-        !keyAlias.isNullOrBlank() &&
-        !keyPassword.isNullOrBlank()
+    !ksPath.isNullOrBlank() &&
+        file(ksPath!!).exists() &&
+        !ksStorePassword.isNullOrBlank() &&
+        !ksKeyAlias.isNullOrBlank() &&
+        !ksKeyPassword.isNullOrBlank()
 
 android {
     namespace = "com.kickplan.training"
@@ -76,10 +80,10 @@ android {
         // Only create a real release signing config when all credentials exist.
         if (hasReleaseSigning) {
             create("release") {
-                storeFile = file(keystorePath!!)
-                storePassword = keystorePassword
-                this.keyAlias = keyAlias
-                this.keyPassword = keyPassword
+                storeFile = file(ksPath!!)
+                storePassword = ksStorePassword
+                keyAlias = ksKeyAlias
+                keyPassword = ksKeyPassword
                 // PKCS12 keystore support (recommended by Google).
                 storeType = "PKCS12"
             }
