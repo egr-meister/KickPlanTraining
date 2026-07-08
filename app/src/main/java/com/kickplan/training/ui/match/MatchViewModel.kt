@@ -90,9 +90,16 @@ class MatchViewModel(
                 return@launch
             }
 
+            // football-data.org /matches defaults to TODAY only. To make the
+            // planner useful, default to a 10-day window (today .. today+9)
+            // when the user hasn't set explicit dates. This stays within the
+            // free plan's max date range.
+            val effectiveFrom = settings.dateFrom.ifBlank { DateUtils.today() }
+            val effectiveTo = settings.dateTo.ifBlank { DateUtils.datePlusDays(9) }
+
             val result = footballRepository.fetchMatches(
-                dateFrom = settings.dateFrom,
-                dateTo = settings.dateTo
+                dateFrom = effectiveFrom,
+                dateTo = effectiveTo
                 // Competition is filtered locally for stability across API plans.
             )
 

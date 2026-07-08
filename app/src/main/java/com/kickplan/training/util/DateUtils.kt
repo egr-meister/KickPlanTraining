@@ -26,6 +26,13 @@ object DateUtils {
     /** Current local time as HH:mm. */
     fun nowTime(): String = timeFormat.format(Date())
 
+    /** A date offset from today by [daysFromToday], formatted as YYYY-MM-DD. */
+    fun datePlusDays(daysFromToday: Int): String {
+        val cal = Calendar.getInstance()
+        cal.add(Calendar.DAY_OF_YEAR, daysFromToday)
+        return dateFormat.format(cal.time)
+    }
+
     /** Full ISO-ish timestamp used for createdAt / updatedAt. */
     fun nowTimestamp(): String =
         SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US).format(Date())
