@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="match_red_orange">#F04423</color>
+    <color name="deep_red_orange">#D9361E</color>
+    <color name="dark_match_header">#151515</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_app_background">#F5F6F8</color>
+    <color name="splash_bg">#0A0A0A</color>
+</resources>

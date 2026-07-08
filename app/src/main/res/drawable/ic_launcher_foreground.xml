@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- White football body (inside the adaptive-icon safe zone) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,50 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0 z" />
+    <!-- Charcoal centre pentagon -->
+    <path
+        android:fillColor="#151515"
+        android:pathData="M54,41 L62.6,47.2 L59.3,57.3 L48.7,57.3 L45.4,47.2 Z" />
+    <!-- Seam strokes radiating from the pentagon -->
+    <group>
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M54,41 L54,33" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M62.6,47.2 L70.2,44.7" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M59.3,57.3 L64,63.8" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M48.7,57.3 L44,63.8" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M45.4,47.2 L37.8,44.7" />
+    </group>
+    <!-- Small dark training cone accent -->
+    <path
+        android:fillColor="#151515"
+        android:pathData="M50,82 L58,82 L54,70 Z" />
+</vector>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- White football on the red splash background -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,50 a28,28 0 1,0 56,0 a28,28 0 1,0 -56,0 z" />
+    <path
+        android:fillColor="#151515"
+        android:pathData="M54,40 L63.3,46.7 L59.7,57.7 L48.3,57.7 L44.7,46.7 Z" />
+    <group>
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M54,40 L54,31" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M63.3,46.7 L71.5,43.9" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M59.7,57.7 L64.8,64.8" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M48.3,57.7 L43.2,64.8" />
+        <path android:strokeColor="#151515" android:strokeWidth="2" android:pathData="M44.7,46.7 L36.5,43.9" />
+    </group>
+</vector>

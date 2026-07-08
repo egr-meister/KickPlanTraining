@@ -1,0 +1,19 @@
+# Copy this file to `local.properties` and fill in your own values.
+# `local.properties` is git-ignored and MUST NEVER be committed.
+
+# Path to your Android SDK (Android Studio usually sets this automatically).
+sdk.dir=/path/to/your/Android/sdk
+
+# --- football-data.org API v4 (Match Schedule feature only) ---
+# Get a free token at https://www.football-data.org/client/register
+# If left empty or equal to "your_api_token_here", the app uses local demo
+# match data and still works fully.
+FOOTBALL_DATA_API_TOKEN=your_api_token_here
+FOOTBALL_API_BASE_URL=https://api.football-data.org/v4
+
+# --- Release signing (optional for local release builds) ---
+# For CI these are provided through GitHub Secrets, not this file.
+# ANDROID_KEYSTORE_PATH=/absolute/path/to/kickplan-training-release-key.p12
+# ANDROID_KEYSTORE_PASSWORD=your_keystore_password
+# ANDROID_KEY_ALIAS=kickplan_training_key
+# ANDROID_KEY_PASSWORD=your_keystore_password

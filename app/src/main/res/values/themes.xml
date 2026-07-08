@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      Base app theme (applied after the splash by the SplashScreen library).
+      A framework theme is used so no extra Material Components dependency is
+      needed; all real UI theming is done in Compose (see ui/theme/Theme.kt).
+    -->
+    <style name="Theme.KickPlan" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/deep_red_orange</item>
+        <item name="android:navigationBarColor">@color/light_app_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Custom splash theme. Red-orange background with the football mark. -->
+    <style name="Theme.KickPlan.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_football</item>
+        <item name="postSplashScreenTheme">@style/Theme.KickPlan</item>
+    </style>
+
+</resources>

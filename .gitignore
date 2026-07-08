@@ -1,0 +1,26 @@
+# Secrets & local config -- never commit
+local.properties
+*.p12
+*.jks
+*.keystore
+keystore.properties
+
+# Android / Gradle build output
+*.iml
+.gradle/
+build/
+/app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ
+.idea/
+*.hprof
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
